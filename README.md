@@ -1,24 +1,7 @@
-# vendingmachinefrontend
+Проект выполнен с применеием Vue 2 версии. Для базы готовых компонентов был подключен пакет vuetify material design.
+Admin.vue - страница администратора. Для входа на страницу требуется ввести query параметр key с значение 256.
+Vending.vue - страница пользователя.
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+CoinDropper.vue - Компонент для внесения монет в автомат и для получения сдачи.
+CoinMonitor.vue - Компонент для вывода информации пользователю о колличестве доступных монет и информации о полученной сдаче.
+DrinkSelector.vue - Компонент для выбора напитков.
