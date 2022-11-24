@@ -52,7 +52,7 @@ import {
   putCoin,
   getChange,
   isThereAChange,
-  buyDrink
+  buyDrink,
 } from "../api/VendingApi";
 import IDrink from "../types/Drink";
 
@@ -64,7 +64,7 @@ export default defineComponent({
     const coinsBag = ref();
     const changeBag = ref();
     const dialog = ref(false);
-    let selectedDrink: IDrink|null = null;
+    let selectedDrink: IDrink | null = null;
 
     onMounted(() => {
       getDrinks().then((repsonse) => {
@@ -109,8 +109,11 @@ export default defineComponent({
     function buy() {
       if (selectedDrink !== null) {
         dialog.value = false;
-        buyDrink(selectedDrink).then(response => {
-            coins.value -= (selectedDrink as any).price;
+        buyDrink(selectedDrink).then((response) => {
+          coins.value -= (selectedDrink as any).price;
+          getDrinks().then((repsonse) => {
+            drinks.value = repsonse.data;
+          });
         });
       }
     }
@@ -124,7 +127,7 @@ export default defineComponent({
       onPutCoin,
       onChange,
       onSelect,
-      buy
+      buy,
     };
   },
 });
