@@ -1,10 +1,15 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
-import Home from '../views/Home.vue'
+import Vending from '../views/Vending.vue'
 
 Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
+  {
+    path: '/',
+    name: 'Vending',
+    component: Vending
+  },
 ]
 
 const router = new VueRouter({
